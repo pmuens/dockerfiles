@@ -1,0 +1,9 @@
+version: '2'
+services:
+  convert:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - .:/convert
+    working_dir: /convert
