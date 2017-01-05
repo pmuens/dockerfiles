@@ -4,4 +4,6 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
+    volumes:
+      - ./exercism-go:/go/src/github.com/pmuens/exercism-go
     working_dir: /go/src/github.com/pmuens/exercism-go/exercises
