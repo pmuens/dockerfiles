@@ -1,0 +1,9 @@
+version: '2'
+services:
+  go:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - .:/go/src/github.com/pmuens/go
+    working_dir: /go/src/github.com/pmuens/go
