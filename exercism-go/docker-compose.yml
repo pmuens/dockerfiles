@@ -1,0 +1,7 @@
+version: '2'
+services:
+  go:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    working_dir: /go/src/github.com/pmuens/exercism-go/exercises
