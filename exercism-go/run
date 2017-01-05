@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ -d exercism-go ]; then
+  echo "Checking for updates..."
+  cd exercism-go
+  git fetch origin
+  cd ..
+else
+  git clone https://github.com/exercism/xgo ./exercism-go
+fi;
+
+docker-compose run go bash
