@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ -d exercism-javascript ]; then
+  echo "Checking for updates..."
+  cd exercism-javascript
+  git fetch origin
+  cd ..
+else
+  git clone https://github.com/exercism/xjavascript ./exercism-javascript
+fi;
+
+docker-compose run javascript bash
