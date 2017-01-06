@@ -1,0 +1,9 @@
+version: '2'
+services:
+  rust:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./exercism-rust:/exercism-rust
+    working_dir: /exercism-rust/exercises
