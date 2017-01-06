@@ -1,0 +1,9 @@
+version: '2'
+services:
+  javascript:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./exercism-javascript:/exercism-javascript
+    working_dir: /exercism-javascript/exercises
