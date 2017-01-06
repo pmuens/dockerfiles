@@ -1,0 +1,9 @@
+version: '2'
+services:
+  ecmascript:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./exercism-ecmascript:/exercism-ecmascript
+    working_dir: /exercism-ecmascript/exercises
