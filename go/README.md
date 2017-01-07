@@ -1,6 +1,6 @@
 # Go
 
-Development environment for go.
+Development environment for Go.
 
 ## Usage
 
