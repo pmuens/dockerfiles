@@ -8,7 +8,7 @@ Development environment for Go.
 
 ## Changing the projects path
 
-You might want to modify the [Docker compose file](./docker-compose.yml) and edit the path to the project (it currently points to `go`) so that GOPATH resolves it correctly.
+You might want to modify the [Docker compose file](./docker-compose.yml) and edit the path to the project (it currently points to `app`) so that GOPATH resolves it correctly.
 
 ## TDD
 
