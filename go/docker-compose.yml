@@ -5,5 +5,5 @@ services:
       context: ./
       dockerfile: Dockerfile
     volumes:
-      - .:/go/src/github.com/pmuens/go
-    working_dir: /go/src/github.com/pmuens/go
+      - .:/go/src/github.com/pmuens/app
+    working_dir: /go/src/github.com/pmuens/app
