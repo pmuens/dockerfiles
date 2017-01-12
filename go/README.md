@@ -12,6 +12,6 @@ You might want to modify the [Docker compose file](./docker-compose.yml) and edi
 
 ## TDD
 
-If you're on the TDD train you can use the `test.sh` script to automatically format the go code, run the tests and create a test coverage report.
+If you're on the TDD train you can use the `test` script to automatically format the go code, run the tests and create a test coverage report.
 
 The test coverage lives in the `.coverage` directory and includes a `coverage.html` file to easily see what code needs coverage while TDDing along.
