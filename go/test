@@ -1,8 +1,42 @@
 #!/usr/bin/env bash
 
-DIR=./.coverage
-mkdir -p $DIR
+# inspired by https://github.com/mlafeldt/chef-runner/blob/v0.7.0/script/coverage
 
-go fmt ./...
-go test ./... -v -covermode=atomic -coverprofile=$DIR/coverage.out
-go tool cover -html=$DIR/coverage.out -o $DIR/coverage.html
+set -e
+
+workdir=.coverage
+profile="$workdir/coverage.out"
+mode=atomic
+
+format_code() {
+  go fmt ./...
+}
+
+generate_coverage_data() {
+  rm -rf "$workdir"
+  mkdir "$workdir"
+
+  for package in "$@"; do
+    function="$workdir/$(echo $package | tr / -).coverage"
+    go test -covermode="$mode" -coverprofile="$function" "$package"
+  done
+
+  echo "mode: $mode" > "$profile"
+  grep -h -v "^mode:" "$workdir"/*.coverage >> "$profile"
+}
+
+show_function_coverage() {
+  go tool cover -func="$profile"
+}
+
+generate_html_file() {
+  go tool cover -html="$profile" -o "$workdir/coverage.html"
+}
+
+format_code
+
+generate_coverage_data $(go list ./...)
+
+show_function_coverage
+
+generate_html_file
