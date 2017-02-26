@@ -1,0 +1,9 @@
+version: '2'
+services:
+  truffle:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./dapp:/app
+    working_dir: /app
