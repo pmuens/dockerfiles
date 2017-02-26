@@ -5,5 +5,5 @@ services:
       context: ./
       dockerfile: Dockerfile
     volumes:
-      - ./dapp:/app
-    working_dir: /app
+      - ./dapp:/dapp
+    working_dir: /dapp
